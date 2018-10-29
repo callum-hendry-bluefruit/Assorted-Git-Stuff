@@ -1,3 +1,6 @@
 Learns:
 https://automatetheboringstuff.com/
 https://exercism.io/tracks/python/exercises
+
+	Regex:
+	https://www.regular-expressions.info/
