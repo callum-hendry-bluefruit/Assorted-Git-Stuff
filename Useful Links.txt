@@ -5,3 +5,6 @@ https://exercism.io/tracks/python/exercises
 	Regex:
 	https://www.regular-expressions.info/ - regex documentation
 	https://www.regexpal.com/ - regex tester
+
+	Reverse Iteration:
+	https://dbader.org/blog/python-reverse-list
