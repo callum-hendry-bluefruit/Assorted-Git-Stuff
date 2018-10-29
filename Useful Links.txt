@@ -1,0 +1,3 @@
+Learns:
+https://automatetheboringstuff.com/
+https://exercism.io/tracks/python/exercises
