@@ -68,3 +68,36 @@ print(mo.group()) # This would print "415-555-4242"
 mo = re.search(r'\d\d\d-\d\d\d-\d\d\d\d', 'My number is 415-555-4242.')
 # This returns a Match object without requiring the creation of a Regex object first
     # Useful if you only need to regex one thing once
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Regex grouping
+# Adding parentheses to a regex will split it into groups, i.e.:
+# (\d\d\d)-(\d\d\d-\d\d\d\d)
+# This would search for the whole string, similar to above, but splits the matched string out into two
+
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+mo.group(1)
+# returns '415'
+mo.group(2)
+# returns '555-4242'
+mo.group(0)
+# returns '415-555-4242'
+mo.group()
+# returns '415-555-4242'
+
+# To get all groups back at once, do this:
+mo.groups()
+# returns a tuple of strings ('415', '555-4242')
+# You can also store the tuple items in separate variables, like so:
+areaCode, mainNumber = mo.groups()
+
+# If you need to match a parentheses as part of a regex, they need escaping with a backslash as () are special characters in regex. Example:
+phoneNumRegex = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My phone number is (415) 555-4242.')
+mo.group(1)
+# returns '(415)'
+mo.group(2)
+# returns '555-4242'
