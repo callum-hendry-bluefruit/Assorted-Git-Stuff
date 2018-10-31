@@ -101,3 +101,33 @@ mo.group(1)
 # returns '(415)'
 mo.group(2)
 # returns '555-4242'
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Matching multiple groups with a pipe character
+# | is a pipe, can be used anywhere you want to match one of many expressions.
+# If a pipe is part of the regex you want to match, it must be escaped via a backslash (\|)
+heroRegex = re.compile (r'Batman|Tina Fey')
+mo1 = heroRegex.search('Batman and Tina Fey.') # This will only return the first match, in this case 'batman'
+mo1.group()
+# returns 'Batman'
+
+mo2 = heroRegex.search('Tina Fey and Batman.')
+mo2.group()
+# returns 'Tina Fey'
+
+# findall() method can be used to find all matches in a string
+
+# Pipe can also be used to match one of several patterns in regex
+    # i.e. If you want to match Batman related things (Batman, Batmobile, Batcopter, Batarang, etc.)
+    # you can use the following:
+batRegex = re.compile(r'Bat(man|mobile|copter|bat)') # This is done by having the strings you want to match in parentheses with a "prefix" to the left of the opening bracket
+mo = batRegex.search('Batmobile lost a wheel')
+mo.group()
+# returns 'Batmobile'
+# group() will always return the full matched text - the prefix and text.
+
+mo.group(1)
+# returns 'mobile'
+# group(number) will return just part of the matched text, without the prefix.
