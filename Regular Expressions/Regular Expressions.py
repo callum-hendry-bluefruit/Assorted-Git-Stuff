@@ -150,3 +150,29 @@ mo2.group()
 # (wo) ? part of the expression means the pattern "wo" is optional. Hence, this expression will match both "Batman" and "Batwoman"
 # Question marks will only match text where there is zero or one instance of the optional text in it.
     # Doesn't appear that it would match if the text was "Batwomanwo"
+    # Multiple match is for star/asterisk
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Matching zero or more with a star/asterisk
+
+batRegex = re.compile(r'Bat(wo)*man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+'Batman'
+
+mo2 = batRegex.search('The Adventures of Batwoman')
+mo2.group()
+'Batwoman'
+
+mo3 = batRegex.search('The Adventures of Batwowowowoman')
+mo3.group()
+'Batwowowowoman'
+
+# (wo) * part of the regex can match multiple times
+    # "Batman" 0 matches
+    # "Batwoman" 1 match
+    # "Batwowowowoman" 4 matches
+# For an actual star character in a string, use \*
