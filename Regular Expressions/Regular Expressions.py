@@ -206,4 +206,24 @@ True
 
 # A range can also be used, which will look for matches for the string anywhere between the minimum and maximum values
     # i.e. (Ha){3,5} - (HaHaHa) to (HaHaHaHaHa)
+    # can match 3, 4 or 5 instance of the search string
 
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Greedy and non-greedy matching
+    # Python's regexes are greedy by default, meaning in an ambiguous situation they will match the longest string possible.
+    # Non-greedy matching will match the shortest string possible.
+
+greedyHaRegex = re.compile(r'(Ha){3,5}')
+mo1 = greedyHaRegex.search('HaHaHaHaHa')
+mo1.group()
+'HaHaHaHaHa'
+
+nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
+mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
+mo2.group()
+'HaHaHa'
+
+# The question mark after the {} is to set the matching to non-greedy
+    # Note that the question mark can have two meanings in a regex - either declaring a non-greedy match, or flagging an optional group.
