@@ -131,3 +131,22 @@ mo.group()
 mo.group(1)
 # returns 'mobile'
 # group(number) will return just part of the matched text, without the prefix.
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Optional matching with a question mark character
+    # Patterns can be matched optionally by use of a ?
+
+batRegex = re.compile(r'Bat(wo)?man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+'Batman'
+
+mo2 = batRegex.search('The Adventures of Batwoman')
+mo2.group()
+'Batwoman'
+
+# (wo) ? part of the expression means the pattern "wo" is optional. Hence, this expression will match both "Batman" and "Batwoman"
+# Question marks will only match text where there is zero or one instance of the optional text in it.
+    # Doesn't appear that it would match if the text was "Batwomanwo"
