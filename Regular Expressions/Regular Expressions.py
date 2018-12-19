@@ -227,3 +227,11 @@ mo2.group()
 
 # The question mark after the {} is to set the matching to non-greedy
     # Note that the question mark can have two meanings in a regex - either declaring a non-greedy match, or flagging an optional group.
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Findall() method
+    # While search() will return a Match object of the FIRST matched text in the searched string, findall() will return the strings of EVERY match in the searched string.
+    # findall() will return a LIST of STRINGS, each string being a match. This is if there are NO GROUPS in the regex.
+    # If there are groups in the regex, findall() will return a LIST of TUPLES, with each tuple being a match - each string inside the tuple are the matches for each group in the regex.
