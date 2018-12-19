@@ -155,7 +155,6 @@ mo2.group()
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 # Matching zero or more with a star/asterisk
 
 batRegex = re.compile(r'Bat(wo)*man')
@@ -176,3 +175,24 @@ mo3.group()
     # "Batwoman" 1 match
     # "Batwowowowoman" 4 matches
 # For an actual star character in a string, use \*
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Matching one or more with a +
+
+batRegex = re.compile(r'Bat(wo)+man')
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group()
+'Batwoman'
+
+mo2 = batRegex.search('The Adventures of Batwowowowoman')
+mo2.group()
+'Batwowowowoman'
+
+mo3 = batRegex.search('The Adventures of Batman')
+mo3 == None
+True
+
+# + symbol matches one or more - requires at least one match to return something.
+# \+ to have an actual plus symbol in a string
