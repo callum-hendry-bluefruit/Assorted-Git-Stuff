@@ -196,3 +196,14 @@ True
 
 # + symbol matches one or more - requires at least one match to return something.
 # \+ to have an actual plus symbol in a string
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Matching a specific number of repetitions
+    # Using a set of curly brackets {}, a regex can be set to look for a specific string X number of times in a row.
+    # i.e. (Ha){3} will match a string of "HaHaHa", but not "HaHa"
+
+# A range can also be used, which will look for matches for the string anywhere between the minimum and maximum values
+    # i.e. (Ha){3,5} - (HaHaHa) to (HaHaHaHaHa)
+
