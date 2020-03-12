@@ -17,3 +17,13 @@ for filename in myFiles:
     # C:\Users\asweigart\accounts.txt
     # C:\Users\asweigart\details.csv
     # C:\Users\asweigart\invite.docx
+
+# -------------------------------------------------------------------------------------------------------------------
+
+# Current Working Directory
+    # Any filename or path that does not start with a root folder is assumed to be under the Current Working Directory, or CWD.
+os.getcwd()
+    # Returns a string with the path to the current working directory. Every program has one.
+    
+    # CWD can be changed via:
+os.chdir()
